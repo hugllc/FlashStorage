@@ -51,8 +51,9 @@ void EEPROMClass::init()
 {
   _eeprom = eeprom_storage.read();
   if (!_eeprom.valid) {
-    memset(_eeprom.data, 0xFF, EEPROM_EMULATION_SIZE);
-  }
+      _eeprom.valid = true;
+    //memset(_eeprom.data, 0xFF, EEPROM_EMULATION_SIZE);
+  } 
   _initialized = true;
 }
 
